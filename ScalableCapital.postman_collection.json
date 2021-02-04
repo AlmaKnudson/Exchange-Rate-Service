@@ -1,0 +1,75 @@
+{
+	"variables": [],
+	"info": {
+		"name": "ScalableCapital",
+		"_postman_id": "746291d4-d98f-6074-df83-f8519ce0748f",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1) Retrieve Currency Pair",
+			"request": {
+				"url": "http://localhost:8080/api/exchange-rate/EUR/USD",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "I want to retrieve the ECB reference rate for a currency pair, e.g. USD/EUR or\r\nHUF/EUR.\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "2) Retrieve Exchange Rate for Currency Pair",
+			"request": {
+				"url": "http://localhost:8080/api/exchange-rate/IDR/RUB",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "I want to retrieve an exchange rate for other pairs, e.g. HUF/USD.\r"
+			},
+			"response": []
+		},
+		{
+			"name": "3) Retrieve Supported Currencies and Their Request Count",
+			"request": {
+				"url": "http://localhost:8080/api/supported-currencies",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "I want to retrieve a list of supported currencies and see how many times they were\r\nrequested.\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "4) Convert Currency",
+			"request": {
+				"url": "http://localhost:8080/api/convert/USD/EUR",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"amount\": 1000\n}"
+				},
+				"description": "I want to convert an amount in a given currency to another, e.g. 15 EUR = ??? GBP"
+			},
+			"response": []
+		},
+		{
+			"name": "5) Get Interactive Chart (Transferwise) for Currency Pair",
+			"request": {
+				"url": "http://localhost:8080/api/interactive-link/GBP/DKK",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "I want to retrieve a link to a public website showing an interactive chart for a given\r\ncurrency pair."
+			},
+			"response": []
+		}
+	]
+}
